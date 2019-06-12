@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!--  Meta  -->
+    <meta charset="UTF-8" />
+    <title>Bodymovin Demo</title>
+
+    <!--  Styles  -->
+    <!-- <link rel="stylesheet" href="index.css"> -->
+  </head>
+
+  <body>
+    <div id="bm"></div>
+    <!-- Scripts -->
+    <script src="./lottie.min.js"></script>
+    <script>
+      let jsonData;
+      function train(data) {
+        jsonData = data;
+      }  
+    </script>
+    <script src="./data.json?cb=train"></script>
+    <script>
+      var animation = bodymovin.loadAnimation({
+        container: document.getElementById('bm'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        //path: './data.json'
+        animationData: jsonData
+      })
+    </script>
+  </body>
+
+</html>
